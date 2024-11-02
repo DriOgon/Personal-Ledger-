@@ -1,0 +1,18 @@
+{
+    "id": "sa-jizhangben",
+    "name": "个人记账本",
+    "displayName": "个人记账本",
+    "version": "1.0.0",
+    "description": "轻账是一款简洁易用的个人记账软件，帮助用户管理日常收入与支出情况。",
+    "keywords": [
+        "uniapp",
+        "记账",
+        "账本"
+    ],
+    "dcloudext": {
+        "category": [
+            "uni-app前端模板",
+            "前端页面模板"
+        ]
+    }
+}
