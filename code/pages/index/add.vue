@@ -19,6 +19,13 @@
 		<view class="sa-value mt20">
 			<input v-model="textRemarks" placeholder-class="placeholder" placeholder="账单备注" />
 		</view>
+		<view class="sa-value mt20">
+			<picker mode="date" @change="onDateChange" :value="billDateString">
+				<view class="picker">
+					账单日期: {{ billDateString }}
+				</view>
+			</picker>
+		</view>
 		<button class="sa-save" hover-class="" @click="btnForm">保存</button>
 	</view>
 </template>
@@ -86,7 +93,16 @@
 						title: '兼职',
 						icon: 'jianzhi'
 					}
-				]
+				],
+				billDate: new Date()
+			}
+		},
+		computed: {
+			billDateString() {
+				const year = this.billDate.getFullYear();
+				const month = (this.billDate.getMonth() + 1).toString().padStart(2, '0');
+				const day = this.billDate.getDate().toString().padStart(2, '0');
+				return `${year}-${month}-${day}`;
 			}
 		},
 		onShow() {
@@ -111,6 +127,9 @@
 					}
 				}
 			},
+			onDateChange(event) {
+				this.billDate = new Date(event.detail.value);
+			},
 			async btnForm() {
 				try {
 					if(this.subId == 0) {
@@ -126,13 +145,14 @@
 				this.save();
 			},
 			save() {
+				const createTime = this.billDate.toISOString().split('T')[0];
 				const parm = {
 					type: this.tabId,
 					icon: this.classList[this.subId-1].icon,
 					content: this.classList[this.subId-1].title,
 					money: this.keyVal,
 					remarks: this.textRemarks,
-					create_time: format.getSysDate()
+					create_time: createTime,
 				};
 				uni.getStorage({
 					key: 'sa_storage_bill',
