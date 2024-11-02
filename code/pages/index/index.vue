@@ -9,12 +9,7 @@
 					<view class="item">
 						<view class="text">{{nowTime.year}}年</view>
 						<view class="content">
-							<picker mode="date" @change="onMonthChange" :value="selectedMonthString">
-								<view class="picker">
-									{{ selectedMonthString }}
-								</view>
-							</picker>
-							<text class="bar"></text>
+
 						</view>
 					</view>
 					<view class="item">
@@ -78,17 +73,7 @@
 					year: '0000',
 					month: '00',
 					day: '00'
-				},
-				selectedMonth: new Date(),
-				months: Array.from({ length: 12 }, (v, k) => k + 1),
-				years: Array.from({ length: 5 }, (v, k) => new Date().getFullYear() - k)
-			}
-		},
-		computed: {
-			selectedMonthString() {
-				const year = this.selectedMonth.getFullYear();
-				const month = (this.selectedMonth.getMonth() + 1).toString().padStart(2, '0');
-				return `${year}-${month}`;
+
 			}
 		},
 		onLoad() {
@@ -105,22 +90,11 @@
 			}
 		},
 		methods: {
-			onMonthChange(event) {
-				const date = new Date(event.detail.value);
-				this.selectedMonth = date;
-				this.getData();
-			},
 			getData() {
 				uni.getStorage({
 					key: 'sa_storage_bill',
 					success: res => {
 						const data = JSON.parse(res.data);
-						const selectedYear = this.selectedMonth.getFullYear();
-						const selectedMonth = this.selectedMonth.getMonth();
-						this.dataList = data.filter(item => {
-							const itemDate = new Date(item.create_time);
-							return itemDate.getFullYear() === selectedYear && itemDate.getMonth() === selectedMonth;
-						});
 						this.total();
 					}
 				})
@@ -140,10 +114,6 @@
 				}
 				this.sumCount = data.length;
 				this.totalbalance = (this.totalIncome - this.totalExpend).toFixed(2); 
-			},
-			selectMonth(month) {
-				this.selectedMonth = month;
-				this.getData();
 			}
 		}
 	}
@@ -154,7 +124,6 @@
 		left: 0;
 		right: 0;
 		z-index: 1;
-		background-color: #07c160;
 		padding: 0 30rpx;
 		.content {
 			height: 230rpx;
