@@ -48,3 +48,5 @@ export function createApp() {
   }
 }
 // #endif
+import uiEcharts from '@/uni_modules/ui-echarts'
+Vue.use(uiEcharts) 

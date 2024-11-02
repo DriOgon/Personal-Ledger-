@@ -15,6 +15,12 @@
 			}
 		},
 		{
+			"path": "pages/index/tu",
+			"style": {
+				"navigationBarTitleText": "图表"
+			}
+		},
+		{
 			"path": "pages/index/user",
 			"style": {
 				"navigationBarTitleText": "我的"
@@ -25,7 +31,31 @@
 			"style": {
 				"navigationBarTitleText": "内容"
 			}
-		}
+		},
+		{
+							"path": "pages/index/outlook_month",
+							"style": {
+								"navigationBarTitleText": "总览"
+							}
+						},
+						{
+							"path": "pages/index/budget-input",
+							"style": {
+								"navigationBarTitleText": "编辑预算"
+							}
+						},
+						{
+							"path": "pages/index/add-account",
+							"style": {
+								"navigationBarTitleText": "添加账户"
+							}
+						},
+						{
+							"path": "pages/index/outlook_year",
+							"style": {
+								"navigationBarTitleText": "年度总览"
+							}
+						}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -50,7 +80,7 @@
 		     "selectedIconPath":"./static/tabbar/home_art.png"
 		  },
 		  {
-		  	 "pagePath":"pages/index/tubiao",
+		  	 "pagePath":"pages/index/tu",
 		     "text":"图表",
 		     "iconPath":"./static/tabbar/tubiao.png",
 		     "selectedIconPath":"./static/tabbar/tubiao_art.png"
@@ -62,7 +92,7 @@
 		    "selectedIconPath":"./static/tabbar/add_art.png"
 		  },
 		  {
-		    "pagePath":"pages/index/zonglan",
+		    "pagePath":"pages/index/outlook_month",
 		    "text":"总览",
 		    "iconPath":"./static/tabbar/zonglan.png",
 		    "selectedIconPath":"./static/tabbar/zonglan_art.png"
