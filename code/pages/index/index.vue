@@ -9,9 +9,7 @@
 					<view class="item">
 						<view class="text">{{nowTime.year}}年</view>
 						<view class="content">
-							<text>{{nowTime.month}}月</text>
-							<text class="bar"></text>
-							
+
 						</view>
 					</view>
 					<view class="item">
@@ -75,7 +73,7 @@
 					year: '0000',
 					month: '00',
 					day: '00'
-				}
+
 			}
 		},
 		onLoad() {
@@ -97,7 +95,6 @@
 					key: 'sa_storage_bill',
 					success: res => {
 						const data = JSON.parse(res.data);
-						this.dataList = JSON.parse(res.data);
 						this.total();
 					}
 				})
@@ -127,7 +124,6 @@
 		left: 0;
 		right: 0;
 		z-index: 1;
-		background-color: #A9A9A9;
 		padding: 0 30rpx;
 		.content {
 			height: 230rpx;

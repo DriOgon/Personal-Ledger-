@@ -15,6 +15,7 @@
 			}
 		},
 		{
+
 			"path": "pages/index/user",
 			"style": {
 				"navigationBarTitleText": "我的"
@@ -25,7 +26,7 @@
 			"style": {
 				"navigationBarTitleText": "内容"
 			}
-		}
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -49,8 +50,7 @@
 		     "iconPath":"./static/tabbar/home.png",
 		     "selectedIconPath":"./static/tabbar/home_art.png"
 		  },
-		  {
-		  	 "pagePath":"pages/index/tubiao",
+
 		     "text":"图表",
 		     "iconPath":"./static/tabbar/tubiao.png",
 		     "selectedIconPath":"./static/tabbar/tubiao_art.png"
@@ -62,7 +62,7 @@
 		    "selectedIconPath":"./static/tabbar/add_art.png"
 		  },
 		  {
-		    "pagePath":"pages/index/zonglan",
+
 		    "text":"总览",
 		    "iconPath":"./static/tabbar/zonglan.png",
 		    "selectedIconPath":"./static/tabbar/zonglan_art.png"

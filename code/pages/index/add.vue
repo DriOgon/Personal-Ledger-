@@ -19,6 +19,7 @@
 		<view class="sa-value mt20">
 			<input v-model="textRemarks" placeholder-class="placeholder" placeholder="账单备注" />
 		</view>
+
 		<button class="sa-save" hover-class="" @click="btnForm">保存</button>
 	</view>
 </template>
@@ -86,7 +87,7 @@
 						title: '兼职',
 						icon: 'jianzhi'
 					}
-				]
+
 			}
 		},
 		onShow() {
@@ -111,6 +112,7 @@
 					}
 				}
 			},
+
 			async btnForm() {
 				try {
 					if(this.subId == 0) {
@@ -125,15 +127,14 @@
 				}
 				this.save();
 			},
-			save() {
+
 				const parm = {
 					type: this.tabId,
 					icon: this.classList[this.subId-1].icon,
 					content: this.classList[this.subId-1].title,
 					money: this.keyVal,
 					remarks: this.textRemarks,
-					create_time: format.getSysDate()
-				};
+
 				uni.getStorage({
 					key: 'sa_storage_bill',
 					success: (res) => {
@@ -248,4 +249,3 @@
 		color: #fff;
 		border-radius: 20rpx;
 	}
-</style>
